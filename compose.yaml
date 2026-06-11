@@ -1,0 +1,10 @@
+services:
+  express_app:
+    image: unisologr/express_app
+    ports:
+      - 8080:8080
+  watchtower:
+    image: nickfedor/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
